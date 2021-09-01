@@ -3,21 +3,22 @@ package com.xiaoyv.utilcode;
 import java.io.File;
 
 /**
- * RemoveKnifeKt
+ * JavaApplication
  *
  * @author why
  * @since 2021/5/20
  */
-public class JavaApplication {
+public class JavaUtils {
+    private final String userDir = System.getProperty("user.dir");
     private File cacheDir;
     private File filesDir;
 
     public File getCacheDir() {
-        return cacheDir == null ? new File("D:/Temp") : cacheDir;
+        return cacheDir == null ? new File(userDir + File.separator + "cache") : cacheDir;
     }
 
     public File getFilesDir() {
-        return filesDir == null ? new File("D:/File") : filesDir;
+        return filesDir == null ? new File(userDir + File.separator + "files") : filesDir;
     }
 
     public void setCacheDir(File cacheDir) {

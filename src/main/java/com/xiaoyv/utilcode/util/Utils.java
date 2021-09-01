@@ -1,6 +1,6 @@
 package com.xiaoyv.utilcode.util;
 
-import com.xiaoyv.utilcode.JavaApplication;
+import com.xiaoyv.utilcode.JavaUtils;
 
 /**
  * <pre>
@@ -12,19 +12,16 @@ import com.xiaoyv.utilcode.JavaApplication;
  */
 public final class Utils {
 
-    private static JavaApplication sApp;
+    private static JavaUtils sApp = new JavaUtils();
 
     private Utils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
     /**
-     * Init utils.
-     * <p>Init it in the class of UtilsFileProvider.</p>
-     *
-     * @param app application
+     * Init utils
      */
-    public static void init(final JavaApplication app) {
+    public static void init(final JavaUtils app) {
         if (app == null) {
             LogUtils.e("Utils", "app is null.");
             return;
@@ -33,7 +30,9 @@ public final class Utils {
             sApp = app;
             return;
         }
-        if (sApp.equals(app)) return;
+        if (sApp.equals(app)) {
+            return;
+        }
         sApp = app;
     }
 
@@ -44,7 +43,7 @@ public final class Utils {
      *
      * @return the Application object
      */
-    public static JavaApplication getApp() {
+    public static JavaUtils getApp() {
         if (sApp != null) return sApp;
         throw new NullPointerException("reflect failed.");
     }
