@@ -30,3 +30,7 @@ tasks.jar {
         attributes["Main-Class"] = "com.xiaoyv.utilcode.util.Utils"
     }
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
+}
