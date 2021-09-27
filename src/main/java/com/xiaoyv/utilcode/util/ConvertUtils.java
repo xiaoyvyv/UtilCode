@@ -2,8 +2,6 @@ package com.xiaoyv.utilcode.util;
 
 import com.xiaoyv.utilcode.constant.MemoryConstants;
 import com.xiaoyv.utilcode.constant.TimeConstants;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -439,47 +437,6 @@ public final class ConvertUtils {
         return new ByteArrayInputStream(bytes);
     }
 
-    /**
-     * JSONObject to bytes.
-     */
-    public static byte[] jsonObject2Bytes(final JSONObject jsonObject) {
-        if (jsonObject == null) return null;
-        return jsonObject.toString().getBytes();
-    }
-
-    /**
-     * Bytes to JSONArray.
-     */
-    public static JSONArray bytes2JSONArray(final byte[] bytes) {
-        if (bytes == null) return null;
-        try {
-            return new JSONArray(new String(bytes));
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /**
-     * JSONArray to bytes.
-     */
-    public static byte[] jsonArray2Bytes(final JSONArray jsonArray) {
-        if (jsonArray == null) return null;
-        return jsonArray.toString().getBytes();
-    }
-
-    /**
-     * Bytes to JSONObject.
-     */
-    public static JSONObject bytes2JSONObject(final byte[] bytes) {
-        if (bytes == null) return null;
-        try {
-            return new JSONObject(new String(bytes));
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
     /**
      * Output stream to bytes.
      */

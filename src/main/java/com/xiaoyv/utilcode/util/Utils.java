@@ -18,6 +18,10 @@ public final class Utils {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
+    public static void main(String[] args) {
+
+    }
+
     /**
      * Init utils
      */

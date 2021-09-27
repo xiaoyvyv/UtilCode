@@ -2,8 +2,6 @@ package com.xiaoyv.utilcode.util;
 
 import com.xiaoyv.annotation.NonNull;
 import com.xiaoyv.utilcode.constant.CacheConstants;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -283,105 +281,6 @@ public final class CacheDiskUtils implements CacheConstants {
         byte[] bytes = realGetBytes(TYPE_STRING + key);
         if (bytes == null) return defaultValue;
         return UtilsBridge.bytes2String(bytes);
-    }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // about JSONObject
-    ///////////////////////////////////////////////////////////////////////////
-
-    /**
-     * Put JSONObject in cache.
-     *
-     * @param key   The key of cache.
-     * @param value The value of cache.
-     */
-    public void put(@NonNull final String key, final JSONObject value) {
-        put(key, value, -1);
-    }
-
-    /**
-     * Put JSONObject in cache.
-     *
-     * @param key      The key of cache.
-     * @param value    The value of cache.
-     * @param saveTime The save time of cache, in seconds.
-     */
-    public void put(@NonNull final String key,
-                    final JSONObject value,
-                    final int saveTime) {
-        realPutBytes(TYPE_JSON_OBJECT + key, UtilsBridge.jsonObject2Bytes(value), saveTime);
-    }
-
-    /**
-     * Return the JSONObject in cache.
-     *
-     * @param key The key of cache.
-     * @return the JSONObject if cache exists or null otherwise
-     */
-    public JSONObject getJSONObject(@NonNull final String key) {
-        return getJSONObject(key, null);
-    }
-
-    /**
-     * Return the JSONObject in cache.
-     *
-     * @param key          The key of cache.
-     * @param defaultValue The default value if the cache doesn't exist.
-     * @return the JSONObject if cache exists or defaultValue otherwise
-     */
-    public JSONObject getJSONObject(@NonNull final String key, final JSONObject defaultValue) {
-        byte[] bytes = realGetBytes(TYPE_JSON_OBJECT + key);
-        if (bytes == null) return defaultValue;
-        return UtilsBridge.bytes2JSONObject(bytes);
-    }
-
-
-    ///////////////////////////////////////////////////////////////////////////
-    // about JSONArray
-    ///////////////////////////////////////////////////////////////////////////
-
-    /**
-     * Put JSONArray in cache.
-     *
-     * @param key   The key of cache.
-     * @param value The value of cache.
-     */
-    public void put(@NonNull final String key, final JSONArray value) {
-        put(key, value, -1);
-    }
-
-    /**
-     * Put JSONArray in cache.
-     *
-     * @param key      The key of cache.
-     * @param value    The value of cache.
-     * @param saveTime The save time of cache, in seconds.
-     */
-    public void put(@NonNull final String key, final JSONArray value, final int saveTime) {
-        realPutBytes(TYPE_JSON_ARRAY + key, UtilsBridge.jsonArray2Bytes(value), saveTime);
-    }
-
-    /**
-     * Return the JSONArray in cache.
-     *
-     * @param key The key of cache.
-     * @return the JSONArray if cache exists or null otherwise
-     */
-    public JSONArray getJSONArray(@NonNull final String key) {
-        return getJSONArray(key, null);
-    }
-
-    /**
-     * Return the JSONArray in cache.
-     *
-     * @param key          The key of cache.
-     * @param defaultValue The default value if the cache doesn't exist.
-     * @return the JSONArray if cache exists or defaultValue otherwise
-     */
-    public JSONArray getJSONArray(@NonNull final String key, final JSONArray defaultValue) {
-        byte[] bytes = realGetBytes(TYPE_JSON_ARRAY + key);
-        if (bytes == null) return defaultValue;
-        return UtilsBridge.bytes2JSONArray(bytes);
     }
 
 

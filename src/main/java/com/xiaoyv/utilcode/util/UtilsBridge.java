@@ -1,7 +1,5 @@
 package com.xiaoyv.utilcode.util;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -65,22 +63,6 @@ class UtilsBridge {
 
     static List<String> inputStream2Lines(final InputStream is, final String charsetName) {
         return ConvertUtils.inputStream2Lines(is, charsetName);
-    }
-
-    static byte[] jsonObject2Bytes(final JSONObject jsonObject) {
-        return ConvertUtils.jsonObject2Bytes(jsonObject);
-    }
-
-    static JSONObject bytes2JSONObject(final byte[] bytes) {
-        return ConvertUtils.bytes2JSONObject(bytes);
-    }
-
-    static byte[] jsonArray2Bytes(final JSONArray jsonArray) {
-        return ConvertUtils.jsonArray2Bytes(jsonArray);
-    }
-
-    static JSONArray bytes2JSONArray(final byte[] bytes) {
-        return ConvertUtils.bytes2JSONArray(bytes);
     }
 
     ///////////////////////////////////////////////////////////////////////////
